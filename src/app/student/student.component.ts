@@ -19,10 +19,18 @@ export class StudentComponent implements OnInit {
     { name: 'Parrick', hobby: 'Cucinare', gender: 'M' },
     { name: 'Marghe', hobby: 'Correre', gender: 'F' },
   ];
-  student: {name:string,hobby:string,gender:string};
+  student: { name: string; hobby: string; gender: string };
   constructor() {
-    this.student = this.STUDENTS[Math.floor(Math.random() * this.STUDENTS.length)];
+    this.student = this.getRandomStudent();
   }
 
   ngOnInit(): void {}
+
+  private getRandomStudent = () => {
+    return this.STUDENTS[Math.floor(Math.random() * this.STUDENTS.length)];
+  };
+
+  changeName = () => {
+    this.student = this.getRandomStudent();
+  };
 }
