@@ -85,6 +85,10 @@
 
     <span>{{ title }} app is running!</span>
   </div>
+  <h2>The students</h2>
+  <div *ngFor="let student of STUDENTS; let index">
+    <student-component [STUDENT]="student"></student-component>
+  </div>
 
   <!-- Resources -->
   <div>

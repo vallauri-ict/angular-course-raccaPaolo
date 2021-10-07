@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-course';
+  public STUDENTS = ['De Toffol', 'Valinotto', 'Dellavalle','Racca'];
 }
