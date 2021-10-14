@@ -7,19 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
   public STUDENTS = [
-    { name: 'De Toffol', hobby: 'Karate', gender: 'M' },
-    { name: 'Valinotto', hobby: 'Paddle', gender: 'F' },
-    { name: 'Dellavalle', hobby: 'Poligono', gender: 'M' },
-    { name: 'Racca', hobby: 'Paddle', gender: 'M' },
-    { name: 'Luna', hobby: 'Truccarsi', gender: 'F' },
-    { name: 'Kekka', hobby: 'Paddle', gender: 'F' },
-    { name: 'Beppa', hobby: 'Tedeschiare', gender: 'F' },
-    { name: 'Lorenzo', hobby: 'Fotografia', gender: 'M' },
-    { name: 'Mommo', hobby: 'Dormire', gender: 'F' },
-    { name: 'Parrick', hobby: 'Cucinare', gender: 'M' },
-    { name: 'Marghe', hobby: 'Correre', gender: 'F' },
+    { name: 'De Toffol', hobby: 'Karate', gender: 'M', isPro: true },
+    { name: 'Valinotto', hobby: 'Paddle', gender: 'F', isPro: false },
+    { name: 'Dellavalle', hobby: 'Poligono', gender: 'M', isPro: true },
+    { name: 'Racca', hobby: 'Paddle', gender: 'M', isPro: true },
+    { name: 'Luna', hobby: 'Truccarsi', gender: 'F', isPro: false },
+    { name: 'Kekka', hobby: 'Paddle', gender: 'F', isPro: true },
+    { name: 'Beppa', hobby: 'Tedeschiare', gender: 'F', isPro: true },
+    { name: 'Lorenzo', hobby: 'Fotografia', gender: 'M', isPro: false },
+    { name: 'Mommo', hobby: 'Dormire', gender: 'F', isPro: true },
+    { name: 'Parrick', hobby: 'Cucinare', gender: 'M', isPro: true },
+    { name: 'Marghe', hobby: 'Correre', gender: 'F', isPro: false },
   ];
-  student: { name: string; hobby: string; gender: string };
+  student: { name: string; hobby: string; gender: string; isPro: boolean };
   constructor() {
     this.student = this.getRandomStudent();
   }

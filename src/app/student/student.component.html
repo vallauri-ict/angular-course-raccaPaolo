@@ -1,4 +1,5 @@
-<p class="clickable"
+<p
+  class="clickable"
   [ngClass]="{
     female: student.gender === 'F',
     male: student.gender === 'M',
@@ -6,5 +7,9 @@
   }"
   (click)="changeName()"
 >
-  {{ student.name }} - {{ student.hobby }}
+  {{ student.name }}
+  <span *ngIf="student.isPro">(Professionista)</span>
+  <span *ngIf="!student.isPro">(Dilettante)</span>
+  -
+  {{ student.hobby }}
 </p>
