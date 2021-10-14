@@ -13,8 +13,18 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.student {
   margin: 8px 0;
+}
+.student span{
+  min-width: 40px;
+  display: inline-block;
+}
+
+.student {
+  min-width: 400px;
+  text-align: left;
 }
 
 p {

@@ -1,15 +1,15 @@
-<p
+<span
   class="clickable"
   [ngClass]="{
-    female: student.gender === 'F',
-    male: student.gender === 'M',
-    underlined: student.hobby === 'Paddle'
+    female: STUDENT.gender === 'F',
+    male: STUDENT.gender === 'M',
+    underlined: STUDENT.hobby === 'Paddle'
   }"
-  (click)="changeName()"
+  (click)="getRandomPro()"
 >
-  {{ student.name }}
-  <span *ngIf="student.isPro">(Professionista)</span>
-  <span *ngIf="!student.isPro">(Dilettante)</span>
+  {{ STUDENT.name }}
+  <span *ngIf="STUDENT.isPro">(Professionista)</span>
+  <span *ngIf="!STUDENT.isPro">(Dilettante)</span>
   -
-  {{ student.hobby }}
-</p>
+  {{ STUDENT.hobby }}
+</span>
