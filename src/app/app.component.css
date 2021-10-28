@@ -17,6 +17,23 @@ h6,
 .student {
   margin: 8px 0;
 }
+
+button{
+  background-color: #125699;
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 4px;
+  color: whitesmoke;
+  vertical-align: middle;
+}
+label{
+  margin: 10px;
+}
+button:disabled{
+  background-color: whitesmoke;
+  color: #24292e;
+}
+
 .student span{
   min-width: 40px;
   display: inline-block;

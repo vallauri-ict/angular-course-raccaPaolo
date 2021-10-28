@@ -86,9 +86,35 @@
     <span>{{ title }} app is running!</span>
   </div>
   <h2>The students</h2>
+  <h2>Add student</h2>
+  <div>
+    <label for="nominativo">Nominativo</label>
+    <input
+      type="text"
+      [(ngModel)]="studentName"
+      id="nominativo"
+      placeholder="Nominativo"
+      #nominativo
+    />
+    <label for="genderM">Maschio</label>
+    <input type="radio" [(ngModel)]="gender" id="genderM" value="M" placeholder="Gender" />
+    <label for="genderM">Femmina</label>
+    <input type="radio" [(ngModel)]="gender" id="genderG" value="F" placeholder="Gender" />
+    <label for="hobby">Hobby</label>
+    <input type="text" [(ngModel)]="hobby" id="hobby" placeholder="Hobby" />
+    <br />
+  </div>
+  <button
+    [disabled]="
+      studentName.length === 0 || hobby.length === 0 || gender.length === 0
+    "
+    (click)="addStudent()"
+  >
+    Aggiunti studente
+  </button>
   <div class="student" *ngFor="let student of STUDENTS; let i = index">
     <span class="student">{{ i + 1 }} => </span>
-    <student-component [STUDENT]="student"></student-component>
+    <student-component (delete)="eliminaStudente($event)" [STUDENT]="student"></student-component>
   </div>
   <!-- Resources -->
   <div>

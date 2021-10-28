@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'student-component',
@@ -14,6 +14,8 @@ export class StudentComponent implements OnInit {
   };
   constructor() {}
 
+  @Output() delete: EventEmitter<object> = new EventEmitter<object>();
+
   ngOnInit(): void {
     this.getRandomPro();
   }
@@ -22,5 +24,9 @@ export class StudentComponent implements OnInit {
     console.log(Math.floor(Math.random() * 2));
     if (Math.floor(Math.random() * 2) == 1) this.STUDENT.isPro = true;
     else this.STUDENT.isPro = false;
+  };
+
+  public elimina = () => {
+    this.delete.emit(this.STUDENT);
   };
 }

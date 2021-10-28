@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  @ViewChild('nominativo') nominativo!: ElementRef;
   title = "Paolo Racca's project";
+  studentName: string = '';
+  gender: string = 'F';
+  hobby: string = '';
 
-  public STUDENTS = [
+  public STUDENTS: any = [
     { name: 'De Toffol', hobby: 'Karate', gender: 'M', isPro: true },
     { name: 'Valinotto', hobby: 'Paddle', gender: 'F', isPro: false },
     { name: 'Dellavalle', hobby: 'Poligono', gender: 'M', isPro: true },
@@ -21,4 +25,23 @@ export class AppComponent {
     { name: 'Parrick', hobby: 'Cucinare', gender: 'M', isPro: true },
     { name: 'Marghe', hobby: 'Correre', gender: 'F', isPro: false },
   ];
+
+  public addStudent = () => {
+    this.STUDENTS.push({
+      name: this.studentName,
+      hobby: this.hobby,
+      gender: this.gender,
+    });
+    this.gender = '';
+    this.studentName = '';
+    this.hobby = '';
+    this.nominativo.nativeElement.focus();
+  };
+
+  public eliminaStudente = (student) => {
+    this.STUDENTS.splice(
+      this.STUDENTS.findIndex((f) => f.name === student.name),
+      1
+    );
+  };
 }

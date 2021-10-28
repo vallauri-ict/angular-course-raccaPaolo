@@ -1,12 +1,17 @@
-.female{
-    background-color: pink;
-    font-weight: bold;
+.female {
+  background-color: pink;
+  font-weight: bold;
 }
 
-.male{
-    background-color: lightblue;
-    font-style: italic;
+.male {
+  background-color: lightblue;
+  font-style: italic;
 }
-.underlined{
-    text-decoration: underline;
+.underlined {
+  text-decoration: underline;
+}
+
+button.delete {
+  background-color: lightcoral;
+  padding-left: 12px;
 }
