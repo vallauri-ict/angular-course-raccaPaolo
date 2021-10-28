@@ -1,0 +1,19 @@
+<span
+  class="clickable"
+  [ngClass]="{
+    female: STUDENT.gender === 'F',
+    male: STUDENT.gender === 'M',
+    underlined: STUDENT.hobby === 'Paddle'
+  }"
+  (click)="getRandomPro()"
+>
+  {{ STUDENT.name }}
+  <span *ngIf="STUDENT.isPro">(Professionista)</span>
+  <span *ngIf="!STUDENT.isPro">(Dilettante)</span>
+  -
+  {{ STUDENT.hobby }}
+</span>
+
+<button (click)="elimina()">
+  Elimina
+</button>
