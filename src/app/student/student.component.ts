@@ -14,7 +14,7 @@ export class StudentComponent implements OnInit {
   };
   constructor() {}
 
-  @Output() delete: EventEmitter<object> = new EventEmitter<object>();
+  @Output() deleteEvent: EventEmitter<object> = new EventEmitter<object>();
 
   ngOnInit(): void {
     this.getRandomPro();
@@ -27,6 +27,6 @@ export class StudentComponent implements OnInit {
   };
 
   public elimina = () => {
-    this.delete.emit(this.STUDENT);
+    this.deleteEvent.emit(this.STUDENT);
   };
 }
